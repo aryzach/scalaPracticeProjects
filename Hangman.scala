@@ -1,34 +1,41 @@
 import scala.annotation.tailrec
-import scala.util.Random
 import scala.io.StdIn
 
-case class State(wordsGuessed: Seq[String], lettersGuessed: Seq[Char], word: String, rand: Random)
+case class Rnd(seed:Int) {
+  def nextInt(bound: Int):(Int, Rnd) = {
+    val rng = new scala.util.Random(seed)
+    val res = rng.nextInt(bound-1)
+    val newSeed = Rnd(seed+1)
+    (res, newSeed)
+  } 
+}
+
+case class State(wordsGuessed: Seq[String], lettersGuessed: Seq[Char], word: String, rand: Rnd)
 trait Guess 
 case class Word(guess: String) extends Guess 
 case class Letter(guess: Char) extends Guess 
 
 
 object Hangman extends App {
-  val rand = Random
-  val words = Seq("HEY","BOAT")
-  val initialState = initializeGame(words, rand)
+  val rand = Rnd(11111112) 
+  val words = List("HEY","BOAT","A","AB")
+  val initialState = initializeGame(words, State(Seq(), Seq(), "", rand))
   main(initialState)
 
 
   def main(s: State): Unit = {
-    val winOrLose = playGame(initialState)
+    println(s)
+    val winOrLose = playGame(s)
     
 
     println(winOrLose)
     println("more?")
 
-    val userInput = StdIn.readLine().trim
+    //val userInput = StdIn.readLine().trim
 
 
-    if (userInput == "y") 
-      //val r = initialState.rand.nextInt(2)
-      //do rand then main with initializeState(..)
-      main(s)
+    //if (userInput == "y") 
+    main(initializeGame(words, s))
   }
 
   def gameOver(s: State): Boolean = s.wordsGuessed.contains(s.word) || s.word.foldLeft(true)((b,x) => s.lettersGuessed.contains(x) && b)
@@ -56,12 +63,13 @@ object Hangman extends App {
   def handleValidWord(w: String)(s:State): State = 
       s.copy(wordsGuessed = w +: s.wordsGuessed) 
 
-  def initializeGame(words: Seq[String], r: Random): State = 
-    State(Seq(), Seq(), getRandomElement(words, r), r)
+  def initializeGame(words: List[String], s: State): State = {
+    val (i, r) = s.rand.nextInt(words.length)
+    println(words.length)
+    println(i)
+    State(Seq(), Seq(), words(i), r)
+  }
 
-
-  def getRandomElement[A](seq: Seq[A], random: Random): A = 
-    seq(random.nextInt(seq.length))
 
   def promptTurn(s: State): Unit = {
     println("word is:")
