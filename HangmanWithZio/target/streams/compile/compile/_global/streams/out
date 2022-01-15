@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio/src/main/scala/Main.scala:28:54: value char is not a member of Guess[0m
+[0m[[0m[31merror[0m] [0m[0m  def failuresCount: Int            = (guesses.map(_.char) -- word.toSet).size[0m
+[0m[[0m[31merror[0m] [0m[0m                                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio/src/main/scala/Main.scala:30:68: value char is not a member of Guess[0m
+[0m[[0m[31merror[0m] [0m[0m  def playerWon: Boolean            = (word.toSet -- guesses.map(_.char)).isEmpty[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

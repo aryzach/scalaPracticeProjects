@@ -1,0 +1,46 @@
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio2/src/main/scala/com/example/Hangman.scala:2:8: not found: object zio[0m
+[0m[[0m[31merror[0m] [0m[0mimport zio._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio2/src/main/scala/com/example/Hangman.scala:3:8: not found: object zio[0m
+[0m[[0m[31merror[0m] [0m[0mimport zio.console._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio2/src/main/scala/com/example/Hangman.scala:5:8: not found: object zio[0m
+[0m[[0m[31merror[0m] [0m[0mimport zio.random._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio2/src/main/scala/com/example/Hangman.scala:8:33: not found: type ZIO[0m
+[0m[[0m[31merror[0m] [0m[0m  def getInput(prompt: String): ZIO[Console, IOException, String] =[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio2/src/main/scala/com/example/Hangman.scala:9:5: not found: value putStrLn[0m
+[0m[[0m[31merror[0m] [0m[0m    putStrLn(prompt).flatMap(_ => getStrLn) [0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio2/src/main/scala/com/example/Hangman.scala:9:35: not found: value getStrLn[0m
+[0m[[0m[31merror[0m] [0m[0m    putStrLn(prompt).flatMap(_ => getStrLn) [0m
+[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio2/src/main/scala/com/example/Hangman.scala:11:21: not found: type ZIO[0m
+[0m[[0m[31merror[0m] [0m[0m  lazy val getName: ZIO[Console, Nothing, Name] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio2/src/main/scala/com/example/Hangman.scala:18:21: not found: type ZIO[0m
+[0m[[0m[31merror[0m] [0m[0m  lazy val getWord: ZIO[Random, Nothing, Word] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio2/src/main/scala/com/example/Hangman.scala:20:12: not found: value nextIntBounded[0m
+[0m[[0m[31merror[0m] [0m[0m      i <- nextIntBounded(words.length)[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio2/src/main/scala/com/example/Hangman.scala:21:12: not found: value ZIO[0m
+[0m[[0m[31merror[0m] [0m[0m      w <- ZIO.fromOption([0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio2/src/main/scala/com/example/Hangman.scala:30:18: not found: type ZIO[0m
+[0m[[0m[31merror[0m] [0m[0m  def getMove(): ZIO[Console, IOException, Guess] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio2/src/main/scala/com/example/Hangman.scala:38:28: not found: type ZIO[0m
+[0m[[0m[31merror[0m] [0m[0m  def showState(s: State): ZIO[Console, Nothing, Unit] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio2/src/main/scala/com/example/Hangman.scala:42:5: not found: value putStrLn[0m
+[0m[[0m[31merror[0m] [0m[0m    putStrLn(s"""[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio2/src/main/scala/com/example/Hangman.scala:59:27: not found: type ZIO[0m
+[0m[[0m[31merror[0m] [0m[0m  def mainLoop(s: State): ZIO[Console, IOException, Unit] = [0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/aryzach/Documents/Projects/learningProjects/hangman/HangmanWithZio2/src/main/scala/com/example/Hangman.scala:73:32: not found: type ZIO[0m
+[0m[[0m[31merror[0m] [0m[0m  def run(args: List[String]): ZIO[ZEnv, Nothing, ExitCode] = [0m
+[0m[[0m[31merror[0m] [0m[0m                               ^[0m
+[0m[[0m[31merror[0m] [0m[0m15 errors found[0m
